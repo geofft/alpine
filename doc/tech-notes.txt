@@ -511,7 +511,7 @@ Compile-time Options
           Do not use Native Language Support. NLS refers to the use of GNU
           gettext utilities to localize a program, in the sense that English is
           translated to some other language. At the time this was written the
-          low-level support for NSL is included in _Alpine_ but no translations
+          low-level support for NLS is included in _Alpine_ but no translations
           have been done. If there is no translation available, that means that
           disabling NLS will make no difference. If you have trouble building
           which is due to gettext or libintl you could try this option, or one
@@ -1013,7 +1013,7 @@ Alpine
           Some options may or may not be supported depending on how _Alpine_
           was compiled. This is a way to determine which options are supported
           in the particular copy of _Alpine_ you are using.
-   -install
+   -uninstall
           For _PC-Alpine_ only, this option removes references to Alpine in
           Windows settings. The registry settings are removed and the password
           cache is cleared.
