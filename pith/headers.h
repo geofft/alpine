@@ -24,12 +24,8 @@
 #include <system.h>		/* os-dep defs/includes */
 #include <general.h>		/* generally useful definitions */
 
-#include "../c-client/mail.h"	/* for MAILSTREAM and friends */
-#include "../c-client/osdep.h"
-#include "../c-client/rfc822.h"	/* for soutr_t and such */
-#include "../c-client/misc.h"	/* for cpystr proto */
-#include "../c-client/utf8.h"	/* for CHARSET and such*/
-#include "../c-client/imap4r1.h"
+#include "../c-client/c-client.h" /* for MAILSTREAM and friends */
+#include "../c-client/imap4r1.h"  /* for IMAP extensions */
 
 /* include osdep protos and def'ns */
 #include "osdep/bldpath.h"

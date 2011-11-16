@@ -46,6 +46,7 @@ static char rcsid[] = "$Id: roleconf.c 1266 2009-07-14 18:39:12Z hubert@u.washin
 #include "../pith/tempfile.h"
 
 
+#undef NOT			/* c-client */
 #define NOT		"! "
 #define NOTLEN		2
 
