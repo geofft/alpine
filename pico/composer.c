@@ -794,7 +794,6 @@ HeaderEditor(int f, int n)
 		    len += lmp->fname ? strlen(lmp->fname) : 0;
 
 		    if(len+3 > sizeof(buf)){
-			bfp = malloc(len+3);
 			space = len+3;
 			if((bfp=malloc(len+3)) == NULL){
 			    emlwrite("\007Can't malloc space for filename",
@@ -1279,7 +1278,6 @@ nomore_to_complete:
 			len += strlen(lmp->size);
 
 			if(len+3 > sizeof(buf)){
-			    bfp = malloc(len+3);
 			    space = len+3;
 			    if((bfp=malloc(len+3)) == NULL){
 				emlwrite("\007Can't malloc space for filename",
