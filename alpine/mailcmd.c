@@ -7676,7 +7676,6 @@ select_by_text(MAILSTREAM *stream, MSGNO_S *msgmap, long int msgno, SEARCHSET **
     int          not = 0, me = 0;
     char         sstring[80], tmp[128];
     char        *p, *sval = NULL;
-    char         buftmp[MAILTMPLEN];
     ESCKEY_S     ekey[8];
     ENVELOPE    *env = NULL;
     HelpType     help;
@@ -7884,14 +7883,10 @@ select_by_text(MAILSTREAM *stream, MSGNO_S *msgmap, long int msgno, SEARCHSET **
 	      case 14 :			/* Subject: default */
 		if(env && env->subject && env->subject[0]){
 		    char *q = NULL;
-
-		    snprintf(buftmp, sizeof(buftmp), "%.75s", env->subject);
-		    buftmp[sizeof(buftmp)-1] = '\0';
-		    q = (char *) rfc1522_decode_to_utf8((unsigned char *)tmp_20k_buf,
-							SIZEOF_20KBUF, buftmp);
-
+		    mail_strip_subject(env->subject, &q);
 		    snprintf(sstring, sizeof(sstring), "%s", q);
 		    sstring[sizeof(sstring)-1] = '\0';
+		    fs_give((void **)&q);
 		}
 
 		continue;
